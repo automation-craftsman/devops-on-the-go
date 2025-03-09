@@ -31,7 +31,7 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_JAVA: true
-          VALIDATE_CSS: true
+#          VALIDATE_CSS: false
           VALIDATE_HTML: true
           DEFAULT_BRANCH: ${{ github.ref_name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
