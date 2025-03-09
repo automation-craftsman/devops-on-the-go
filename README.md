@@ -14,8 +14,6 @@ This project is a simple web application that demonstrates a basic DevOps workfl
 
 * Java Development Kit (JDK) 21
 * Maven
-* Docker
-* Git
 
 ### Build and run
 
