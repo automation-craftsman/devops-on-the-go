@@ -3,7 +3,7 @@ name: Code Integration Pipeline
 on:
   push:
     branches:
-      - 'feature/codepl'
+      - 'feature/*'
 
 jobs:
   dev_branch_integration:
@@ -47,3 +47,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=automation-craftsman_devops-on-the-go
+
+      - name: Unit test
+        run: mvn test
