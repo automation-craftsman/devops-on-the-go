@@ -5,6 +5,9 @@ on:
     branches:
       - 'feature/*'
 
+permissions:
+  contents: write
+
 jobs:
   dev_branch_integration:
     runs-on: ubuntu-latest
@@ -43,3 +46,13 @@ jobs:
 
       - name: Unit test
         run: mvn test
+
+      - name: Merge with dev branch
+        if: success()
+        uses: julbme/gh-action-merge-branch@v1
+        with:
+          from: ${{ github.ref }}
+          to: dev
+          message: Merge feature branch to dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
