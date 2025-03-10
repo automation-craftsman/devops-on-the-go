@@ -17,5 +17,16 @@
         <module name="PackageName">
             <property name="format" value="^[a-z]+(\.[a-z][a-zA-Z0-9]*)*$"/>
         </module>
+
+        <module name="NewlineAtEndOfFile"/>
+        <module name="JavadocPackage"/>
+        <module name="FileTabCharacter"/>
+        <module name="DesignForExtension"/>
+        <module name="MissingJavadocMethod"/>
+        <module name="LineLength">
+            <property name="max" value="80"/>
+        </module>
+        <module name="FinalParameters"/>
+        <module name="HideUtilityClassConstructor"/>
     </module>
 </module>
