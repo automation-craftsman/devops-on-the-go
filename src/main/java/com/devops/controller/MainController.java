@@ -14,7 +14,7 @@ public class MainController {
 	}
 
 	@PostMapping("/get-started")
-	public String getStarted(@RequestParam("getStartedInput") String input) {
+	public String getStarted(@RequestParam("getStartedInput") final String input) {
 		// Handle the form submission, e.g., print the input value
 		System.out.println("Get Started input: " + input);
 		return "index.html"; // Return the same page for now
