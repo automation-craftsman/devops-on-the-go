@@ -43,3 +43,13 @@ jobs:
 
       - name: Unit test
         run: mvn test
+
+      - name: Merge feature/* -> dev
+        if: success()
+        uses: julbme/gh-action-merge-branch@v1
+        with:
+          from: ${{ github.ref }}
+          to: branch-name
+          message: Merge feature branch to dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
