@@ -5,6 +5,9 @@ on:
     branches:
       - 'feature/*'
 
+permissions:
+  contents: write
+
 jobs:
   dev_branch_integration:
     runs-on: ubuntu-latest
@@ -44,7 +47,7 @@ jobs:
       - name: Unit test
         run: mvn test
 
-      - name: Merge feature/* -> dev
+      - name: Merge with dev branch
         if: success()
         uses: julbme/gh-action-merge-branch@v1
         with:
