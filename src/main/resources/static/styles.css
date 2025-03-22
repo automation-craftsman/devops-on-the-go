@@ -1,73 +1,74 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap');
+
 body {
     margin: 0;
-    font-family: sans-serif;
-    background-color: #f8f8f8;
+    font-family: "Cairo Play", sans-serif;
+    background-color: var(--color-background, #f8f8f8);
+    color: var(--color-text, #444);
+}
+
+:root {
+    --color-background: #f8f8f8;
+    --color-text: #444;
+    --color-heading: #333;
+    --color-button: #e0e0e0;
+    --color-button-text: #333;
+    --space-large: 50px;
+    --space-medium: 30px;
+    --space-small: 20px;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    padding: 50px 20px;
+    justify-content: flex-start;
+    padding: var(--space-large) var(--space-small);
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
 .text-content {
     max-width: 800px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-medium);
 }
 
-.text-content h1 {
-    font-size: 3em;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.text-content .subtitle {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #666;
-}
-
-.text-content .description {
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: #444;
+.text-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .github-button {
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 1em;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.github-button:hover,
+.github-button:focus {
+    background-color: #d0d0d0;
 }
 
 .image-content {
     text-align: center;
+    margin-bottom: var(--space-medium);
 }
 
 .image-content img {
-    max-width: 80%;
+    max-width: 50%;
     height: auto;
 }
 
-@media (max-width: 800px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .text-content {
-        order: 2;
-    }
-
-    .image-content {
-        order: 1;
-    }
+#message-container {
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
 }
