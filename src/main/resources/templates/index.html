@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevOps On the Go</title>
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="Learn about DevOps and its practices. Visit my GitHub for more projects.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@200..1000&display=swap" rel="stylesheet">
+
+    <!-- Link to CSS using Thymeleaf -->
+    <link rel="stylesheet" th:href="@{/styles.css}">
 </head>
 <body>
-<div class="container">
-    <div class="text-content">
-        <h1>DevOps</h1>
-        <p class="description">DevOps combines software development and IT operations to improve collaboration and
-            streamline the software delivery process. It focuses on automation, continuous integration, and
-            continuous delivery (CI/CD) to enable faster and more reliable releases. By using tools like Jenkins,
-            Docker, and Kubernetes, DevOps enhances efficiency and reduces manual errors. The goal is to foster a
-            culture of continuous improvement and rapid response to customer needs.</p>
-        <a href="https://github.com/automation-craftsman" class="github-button" target="_blank">Visit my Github</a>
-    </div>
-    <div class="image-content">
+<main class="container">
+    <section class="image-content">
         <img src="/devops.png" alt="DevOps Illustration">
-    </div>
-</div>
+    </section>
+    <section class="text-content">
+        <h3 th:text="'[ ' + ${hostname} + ' ]'"></h3>
+        <div id="message-container">
+            [--message-begins--] DevOps combines software development and IT operations to improve collaboration and streamline the software
+            delivery process. It focuses on automation, continuous integration, and continuous delivery (CI/CD) to
+            enable faster and more reliable releases. By using tools like Jenkins, Docker, and Kubernetes, DevOps
+            enhances efficiency and reduces manual errors. The goal is to foster a culture of continuous improvement
+            and rapid response to customer needs. [--message-ends--]
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/automation-craftsman" class="github-button" target="_blank">Visit my Github</a>
+        </div>
+    </section>
+</main>
 </body>
 </html>
